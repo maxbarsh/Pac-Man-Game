@@ -58,7 +58,7 @@ public class MapSelectScreen extends JPanel {
 		//------- new maps here ------------
 		
 		ImageIcon hireMap = new ImageIcon(getClass().getResource("maps/HireMeMap.png"));
-		Image imgHire = classicMap.getImage();  //transform it
+		Image imgHire = hireMap.getImage();  //transform it
 		Image newImgHire = imgHire.getScaledInstance(113, 150,  java.awt.Image.SCALE_SMOOTH);
 		hireMap = new ImageIcon(newImgHire);
 		

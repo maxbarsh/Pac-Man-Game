@@ -87,27 +87,12 @@ public class GameOver extends JPanel {
 
 		String nameDisplayString = "";
 		String scoreDisplayString = "";
-//		String writeString = "";
 
-		//File file = new File("resources/scores/HighScores.txt");
 
-//		try {
-//			OutputStream os = new FileOutputStream(file);
-//			PrintWriter out = new PrintWriter(os, true);
-
-			for(int i = 0; i < scoresArray.length; i++) {
-				nameDisplayString += "" + (i+1) + ". " + nameArray[i] + "\n";
-				scoreDisplayString += "" + scoresArray[i] + "\n";
-//				writeString += nameArray[i] + "    " + scoresArray[i] + "\n";
-			}
-
-//			out.print(writeString);
-//			out.flush();
-//			out.close();
-//
-//		} catch (FileNotFoundException e1) {
-//			e1.printStackTrace();
-//		}
+		for(int i = 0; i < scoresArray.length; i++) {
+			nameDisplayString += "" + (i+1) + ". " + nameArray[i] + "\n";
+			scoreDisplayString += "" + scoresArray[i] + "\n";
+		}
 
 
 		names.setText(nameDisplayString);
@@ -115,11 +100,11 @@ public class GameOver extends JPanel {
 		this.add(names);
 
 		scores.setText(scoreDisplayString);
-		scores.setBounds(360, 240, 200, 200);
+		scores.setBounds(320, 240, 200, 200);
 		this.add(scores);
 
 
-		JButton newGame = new JButton("Quit");
+		JButton newGame = new JButton("New Game");
 		newGame.setBackground(new Color(4, 29, 191));
 		newGame.setFont(new Font("Sans-Serif", Font.PLAIN, 20));
 		newGame.setForeground(Color.WHITE);
@@ -127,23 +112,36 @@ public class GameOver extends JPanel {
 		newGame.setBorderPainted(false);
 		newGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-//				frame.dispose();
-//				
-//				JFrame newFrame = new JFrame("PacMan");
-//				newFrame.setSize(500, 700);
-//				newFrame.setLocationRelativeTo(null);
-//				newFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//				newFrame.setResizable(false);
-//				
-//				HomeScreen home = new HomeScreen(newFrame);
-//				newFrame.setContentPane(home);
-//				newFrame.setVisible(true);
+				frame.dispose();
+
+				JFrame newFrame = new JFrame("PacMan");
+				newFrame.setSize(500, 700);
+				newFrame.setLocationRelativeTo(null);
+				newFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				newFrame.setResizable(false);
+
+				HomeScreen home = new HomeScreen(newFrame);
+				newFrame.setContentPane(home);
+				newFrame.setVisible(true);
 			}
 		});
-		newGame.setBounds(280, 500, 180, 50);
+		newGame.setBounds(50, 500, 180, 50);
 		this.add(newGame);
 
 
+		JButton quitGame = new JButton("Quit");
+		quitGame.setBackground(new Color(4, 29, 191));
+		quitGame.setFont(new Font("Sans-Serif", Font.PLAIN, 20));
+		quitGame.setForeground(Color.WHITE);
+		quitGame.setOpaque(true);
+		quitGame.setBorderPainted(false);
+		quitGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		quitGame.setBounds(280, 500, 180, 50);
+		this.add(quitGame);
+		
 	}
 }
