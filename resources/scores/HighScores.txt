@@ -1,0 +1,9 @@
+MAX    99999999
+MMM    210
+AAA    0
+AAA    0
+AAA    0
+AAA    0
+AAA    0
+AAA    0
+AAA    0
